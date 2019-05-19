@@ -18,47 +18,110 @@ function myFunction1() {
     var arreglo = [];
     var xy = false;
     var contador=[];
-    console.log("sus letras  son "+ texto);
+    var numeros=0;
+    var arreglo2=[];
+    var letras = 0;
+    var  numeros= 0;
+    var  separadores= 0;
+    var operadores  = 0;
+    var especiales = 0;
+    
+    
     for (var i = 0;  i < texto.length; i++ )
     {
        for (let n = 0; n < arreglo.length; n++) {
-                   if (arreglo[n]==texto.charAt(i)) {   
-                     contador[n]++;
-                     xy = true;
+                   if (arreglo[n]==texto.charAt(i)) {  
+                    arreglo2[i]= texto.charAt(i);
+                      contador[n]++;
+                      xy = true;
                    }
         } 
         if (xy == false) {
-            
+          arreglo2[i]= texto.charAt(i);
             arreglo[i]= texto.charAt(i);
             contador[i]= 1 ;
        }
         xy= false;
     }    
-    for(x in arreglo){
-         console.log(arreglo[x] + "= " + contador[x]);
-   
-         document.getElementById("parrafo").value +="\n "+arreglo[x]+": "+ contador[x];
-     }
+    
+
+for (let i = 0; i < arreglo2.length; i++) {
+  for (let n = 0; n < json.length; n++) {
+    if (json[n].symbol==arreglo2[i] )
+     {
+          if (json[n].description=="letra") {
+        letras++;
+        
+      }
+       
+          if (json[n].description=="numero") {
+        numeros++;
+      }
+       
+      if (json[n].description=="especial") {
+        especiales++;
+      }
+       
+          if (json[n].description=="separador") {
+        separadores++;
+      }
+
+
+      if (json[n].description=="operador") {
+        operadores++;
+      }
+
+
+    }
+
+    
   
+  }
+  
+}
+
+
+
+
+
+
+
+     console.log("letras: "+letras+"\n numeros: "+numeros+"\n operadores: "+operadores+"\n separadores: "+ separadores+ "\n especiales \n "+ especiales);
+
+     document.getElementById("parrafo").value += "Texto: "+texto+"\nLetras: ["+letras+"]\n Numeros: ["+numeros+"]\n Operadores: ["+operadores+"]\n Separadores: ["+ separadores+ "]\n Especiales: ["+ especiales +"]\n";
+
+     document.getElementById("parrafo2").value +="TEXTO:["+texto+"]\n";
+
+
+     for(x in arreglo){
+        
+   
+      document.getElementById("parrafo").value +="  "+arreglo[x]+"["+ contador[x]+"]";
+      document.getElementById("parrafo2").value +="  "+arreglo[x]+":["+ contador[x]+"]";
+  }
+
+
     }
 
 
     function showtable(){
   
       var table = "<table class = 'table table-striped table-bordered'>"
-                +   "<caption> Tabla de caracteres </caption>"
             +   "<thead>"
             +     "<tr>"
-            +       "<th>Caracter</th>"
-            +       "<th>Descripcion</th>"
+            +       "<th style='padding-left:15%;'>Caracter</th>"
+            +       "<th style='padding-left:15%;'>Descripcion</th>"
             +     "</tr>"
             +   "</thead>"
-            +   "<tbody><tr><td colspan='2'>"
-                              
-      for(x in json){
+            +   "<tbody>"
+           
+                 
+            
+      for (let i = 0; i < json.length; i++) 
+      {
         table += "<tr>"
-                +  "<td >" + json[x].letra + "</td>"
-                +  "<td " + json[x].description + "</td>"
+                +  "<td  style='padding-left:20%;'>" + json[i].symbol + "</td>"
+                +  "<td  style='padding-left:20%;'> " + json[i].description + "</td>"
                 +"</tr>"
       }
     
@@ -69,10 +132,6 @@ function myFunction1() {
       tableDiv.innerHTML = table;
       
     }
-
-
-
-
 
 
 

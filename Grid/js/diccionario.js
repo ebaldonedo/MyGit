@@ -48,9 +48,41 @@ var json = [
 {symbol: "Y",     description :"letra"},
 {symbol: "Z",     description :"letra"},
 {symbol: "w",     description :"letra"},
-{symbol: "",     description :"letra"},
-{symbol: "",     description :"letra"},
-{symbol: "",     description :"letra"},
+{symbol: "0",     description :"numero"},
+{symbol: "1",     description :"numero"},
+{symbol: "2",     description :"numero"},
+{symbol: "3",     description :"numero"},
+{symbol: "4",     description :"numero"},
+{symbol: "5",     description :"numero"},
+{symbol: "6",     description :"numero"},
+{symbol: "7",     description :"numero"},
+{symbol: "8",     description :"numero"},
+{symbol: "9",     description :"numero"},
+{symbol: "/",     description :"operador"},
+{symbol: "*",     description :"operador"},
+{symbol: "-",     description :"operador"},
+{symbol: "+",     description :"operador"},
+{symbol: "=",     description :"operador"},
+{symbol: "<",     description :"operador"},
+{symbol: ">",     description :"operador"},
+{symbol: "(",     description :"separador"},
+{symbol: ")",     description :"separador"},
+{symbol: "[",     description :"separador"},
+{symbol: "]",     description :"separador"},
+{symbol: "{",     description :"separador"},
+{symbol: "}",     description :"separador"},
+{symbol: "!",     description :"especial"},
+{symbol: "@",     description :"especial"},
+{symbol: "#",     description :"especial"},
+{symbol: "$",     description :"especial"},
+{symbol: "&",     description :"especial"},
+{symbol: "-",     description :"especial"},
+{symbol: "_",     description :"especial"},
+{symbol: ",",     description :"especial"},
+{symbol: ".",     description :"especial"},
+{symbol: ";",     description :"especial"},
+{symbol: ":",     description :"especial"},
+{symbol: "\n",     description :"especial"},
 
 
 
@@ -61,4 +93,4 @@ var json = [
 
 
 
-]
+];
