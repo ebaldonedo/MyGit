@@ -1,0 +1,33 @@
+header {
+    background:#2c3e50;
+    color: aliceblue;
+}
+
+article {
+    background: rgb(228, 222, 222);
+}
+
+aside {
+    background: rgb(243, 135, 116);
+    color: black;
+}
+
+.L1 {
+background: rgb(13, 127, 221);
+    color: rgb(238, 224, 232);
+    margin: blue;
+}
+
+footer {
+
+    background: lightseagreen;
+    color: aliceblue; 
+}
+
+.caja {
+height: 120px;
+width: 180px;
+margin-top: 20px;
+margin: blue;
+
+}

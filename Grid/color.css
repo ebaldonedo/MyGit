@@ -1,0 +1,59 @@
+.B1 {
+
+color: black;
+background-color:white;
+}
+
+.botonmain2{
+    width: 300px;
+    margin-left: 65px;
+    margin-top: 5px;
+    
+
+
+}
+
+.botonmainL {
+width: 85px;
+    margin-bottom: 5px;
+margin-left: 80px;
+margin-top: 30px;
+}
+
+.botonmain {
+    width: 85px;
+        margin-bottom: 5px;
+  
+    margin-top: 30px;
+    }
+
+.botonmain3 {
+    
+    margin-top: 5px;
+    margin-bottom: 5px;
+  
+ 
+    }
+
+
+
+header{
+    background:#2c3e50;
+    color: aliceblue;
+    text-align: center;
+}
+
+.M{
+    
+    margin-bottom: 5px;
+  color : #b0c4d8;
+    margin-top: 30px;
+}
+
+.form-control:hover{
+
+border: solid;
+border-color: rgb(134, 228, 245);
+
+}
+
