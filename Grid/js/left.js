@@ -14,7 +14,7 @@ function myFunction1() {
   function compilar(){
     Limpiar();
     var texto = document.getElementById("cajon").value;
-    texto = texto.replace(/ /g,"");
+    texto = texto.replace(/\n/g," ");
     var arreglo = [];
     var xy = false;
     var contador=[];
@@ -44,7 +44,7 @@ function myFunction1() {
         xy= false;
     }    
     
-
+    
 for (let i = 0; i < arreglo2.length; i++) {
   for (let n = 0; n < json.length; n++) {
     if (json[n].symbol==arreglo2[i] )
@@ -84,20 +84,20 @@ for (let i = 0; i < arreglo2.length; i++) {
 
 
 
-
+texto = texto.replace(/ /g," ");
 
      console.log("letras: "+letras+"\n numeros: "+numeros+"\n operadores: "+operadores+"\n separadores: "+ separadores+ "\n especiales \n "+ especiales);
 
      document.getElementById("parrafo").value += "Texto: "+texto+"\nLetras: ["+letras+"]\n Numeros: ["+numeros+"]\n Operadores: ["+operadores+"]\n Separadores: ["+ separadores+ "]\n Especiales: ["+ especiales +"]\n";
 
-     document.getElementById("parrafo2").value +="TEXTO:["+texto+"]\n";
+ 
 
 
      for(x in arreglo){
         
    
       document.getElementById("parrafo").value +="  "+arreglo[x]+"["+ contador[x]+"]";
-      document.getElementById("parrafo2").value +="  "+arreglo[x]+":["+ contador[x]+"]";
+ 
   }
 
 

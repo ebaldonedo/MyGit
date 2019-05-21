@@ -82,6 +82,8 @@ var json = [
 {symbol: ".",     description :"especial"},
 {symbol: ";",     description :"especial"},
 {symbol: ":",     description :"especial"},
+{symbol: " ",     description :"especial"},
+{symbol: "",     description :"especial"},
 {symbol: "\n",     description :"especial"},
 
 
