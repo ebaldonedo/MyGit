@@ -13,6 +13,7 @@
 <header>
 <script src="js/left.js"></script>
 <script src="js/diccionario.js"></script>
+<script src="js/words.js"></script>
     <div class="page-header container">
         <h1>Compiler2</h1>
     </div>
@@ -27,7 +28,15 @@
                 <button onclick="myFunction2()" class="botonmain btn btn-xs btn-outline-dark">Center</button>
                 <button onclick="myFunction3()" class="botonmain btn btn-xs btn-outline-dark">Right</button>
                 <br>
-                <textarea class="form-control" name="" id="cajon" cols="45" rows="10">hello world!</textarea>
+                <textarea class="form-control" name="" id="cajon" cols="45" rows="10">
+begin
+var a as integer
+a = 2
+var b as string
+if a=2
+print a
+endif
+end</textarea>
                 
                 <button onclick="compilar()" class="botonmain2 btn btn-xs btn-success">Compilar</button>
                 <br>
@@ -43,14 +52,14 @@
                   <li class="M nav-item   "><a class="nav-link "  data-toggle="pill" href="#menu1">Sintatic </a></li>
                   <li class="M nav-item "><a class="nav-link " data-toggle="pill" href="#menu2">Semantic </a></li>
                   <li class="M nav-item  "><a class="nav-link " onclick="showtable()" data-toggle="pill" href="#menu3">Char </a></li>
-                  <li class="M nav-item  "><a class="nav-link " data-toggle="pill" href="#menu4">Letter </a></li>
+                  <li class="M nav-item  "><a class="nav-link "onclick="showWords()" data-toggle="pill" href="#menu4">Letter </a></li>
                 </ul>
                 
                 <div class="tab-content">
                  
                     <div id="home" class="tab-pane fade show active">
                    
-                      <textarea class="form-control" name="" id="parrafo" cols="45" rows="10"></textarea>
+                      <textarea disabled class="text2 form-control-plaintext" name="" id="parrafo" cols="45" rows="10" ></textarea>
                       </div>
 
                   <div id="menu1" class="tab-pane fade">
@@ -61,15 +70,15 @@
                    
                     <p>Not Today.</p>
                   </div>
+
                   <div id="menu3" class="table-wrapper-scroll-y my-custom-scrollbar tab-pane fade">
                     
                        <div id="show"></div>                 
-
-
                   </div>
-                  <div id="menu4" class="tab-pane fade">
+
+                  <div id="menu4" class="table-wrapper-scroll-y my-custom-scrollbar tab-pane fade">
                    
-                    <p>Capitan America muere</p>
+                    <div id="words"></div>
                   </div>
 
                 </div>

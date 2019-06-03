@@ -71,4 +71,12 @@ border-color: rgb(134, 228, 245);
         text-align: center;
         padding-left: 20%;
     }
+   
 
+    .text2:hover{
+border: solid;
+border-color: rgb(134, 228, 245);
+
+    }
+
+    

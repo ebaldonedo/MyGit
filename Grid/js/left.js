@@ -1,3 +1,4 @@
+
 function myFunction1() {
     document.getElementById("cajon").style.textAlign= "left";
   }
@@ -10,7 +11,7 @@ function myFunction1() {
     document.getElementById("cajon").style.textAlign = "right";
   }
 
-
+//LEXIC-------------------------------------------------------------------------
   function compilar(){
     Limpiar();
     var texto = document.getElementById("cajon").value;
@@ -25,6 +26,7 @@ function myFunction1() {
     var  separadores= 0;
     var operadores  = 0;
     var especiales = 0;
+    var total = 0;
     
     
     for (var i = 0;  i < texto.length; i++ )
@@ -70,19 +72,9 @@ for (let i = 0; i < arreglo2.length; i++) {
       if (json[n].description=="operador") {
         operadores++;
       }
-
-
-    }
-
-    
-  
-  }
-  
+    }  
+  } 
 }
-
-
-
-
 
 texto = texto.replace(/ /g," ");
 
@@ -91,7 +83,7 @@ texto = texto.replace(/ /g," ");
      document.getElementById("parrafo").value += "Texto: "+texto+"\nLetras: ["+letras+"]\n Numeros: ["+numeros+"]\n Operadores: ["+operadores+"]\n Separadores: ["+ separadores+ "]\n Especiales: ["+ especiales +"]\n";
 
  
-
+total = letras + numeros+ especiales+ separadores +operadores;
 
      for(x in arreglo){
         
@@ -99,11 +91,11 @@ texto = texto.replace(/ /g," ");
       document.getElementById("parrafo").value +="  "+arreglo[x]+"["+ contador[x]+"]";
  
   }
-
+  document.getElementById("parrafo").value += "\nTOTAL=["+total+"]";
 
     }
 
-
+//CHAR-----------------------------------------------------------------------------------
     function showtable(){
   
       var table = "<table class = 'table table-striped table-bordered'>"
@@ -134,6 +126,35 @@ texto = texto.replace(/ /g," ");
     }
 
 
+//Letter
+function showWords(){
+  
+  var table = "<table class = 'table table-striped table-bordered'>"
+        +   "<thead>"
+        +     "<tr>"
+        +       "<th style='text-align: center;'>Word</th>"
+        +       "<th style='padding-left:15%;'>Description</th>"
+        +     "</tr>"
+        +   "</thead>"
+        +   "<tbody>"
+       
+             
+        
+  for (let i = 0; i < jsonW.length; i++) 
+  {
+    table += "<tr>"
+            +  "<td  style='text-align: center;'>" + jsonW[i].word + "</td>"
+            +  "<td  style='padding-left:20%;'> " + jsonW[i].description + "</td>"
+            +"</tr>"
+  }
+
+  table += "</table></div></td></tr></tbody></table>"
+
+  var tableDiv = document.getElementById("words");
+
+  tableDiv.innerHTML = table;
+  
+}
 
 
 
@@ -144,10 +165,8 @@ texto = texto.replace(/ /g," ");
 
 
 
-    function leer(){
-        var x = document.getElementById("cajon").value.ignoreCase;
-        alert("Su texto es: "+x+" y tiene "+x.length+" caracteres");
-     }
+
+   
 
 
 
