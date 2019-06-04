@@ -38,7 +38,7 @@ print a
 endif
 end</textarea>
                 
-                <button onclick="compilar()" class="botonmain2 btn btn-xs btn-success">Compilar</button>
+                <button onclick="compilar(), Sintatic()" class="botonmain2 btn btn-xs btn-success">Compilar</button>
                 <br>
                 
             </div> 
@@ -48,35 +48,35 @@ end</textarea>
                <div class="container">
         
                 <ul class="nav nav-tabs ">
-                  <li class="M nav-item  "><a class="nav-link active " data-toggle="tab" href="#home" aria-selected="true">Lexic </a></li>
-                  <li class="M nav-item   "><a class="nav-link "  data-toggle="pill" href="#menu1">Sintatic </a></li>
-                  <li class="M nav-item "><a class="nav-link " data-toggle="pill" href="#menu2">Semantic </a></li>
-                  <li class="M nav-item  "><a class="nav-link " onclick="showtable()" data-toggle="pill" href="#menu3">Char </a></li>
-                  <li class="M nav-item  "><a class="nav-link "onclick="showWords()" data-toggle="pill" href="#menu4">Letter </a></li>
+                  <li class="M nav-item  "><a class="nav-link active " data-toggle="tab" href="#lexic" aria-selected="true">Lexic </a></li>
+                  <li class="M nav-item   "><a class="nav-link"   data-toggle="pill" href="#Sintatic">Sintatic </a></li>
+                  <li class="M nav-item "><a class="nav-link " data-toggle="pill" href="#Semantic">Semantic </a></li>
+                  <li class="M nav-item  "><a class="nav-link " onclick="showtable()" data-toggle="pill" href="#Char">Char </a></li>
+                  <li class="M nav-item  "><a class="nav-link "onclick="showWords()" data-toggle="pill" href="#Letter">Letter </a></li>
                 </ul>
                 
                 <div class="tab-content">
                  
-                    <div id="home" class="tab-pane fade show active">
+                    <div id="lexic" class="tab-pane fade show active">
                    
                       <textarea disabled class="text2 form-control-plaintext" name="" id="parrafo" cols="45" rows="10" ></textarea>
                       </div>
 
-                  <div id="menu1" class="tab-pane fade">
+                  <div id="Sintatic" class="tab-pane fade ">
                    
-                    <p>What do we say to the God of Death?</p>
+                    <textarea  disabled class="text2 form-control-plaintext" name="" id="parrafo2" cols="25" rows="10" ></textarea>
                   </div>
-                  <div id="menu2" class="tab-pane">
+                  <div id="Semantic" class="tab-pane">
                    
                     <p>Not Today.</p>
                   </div>
 
-                  <div id="menu3" class="table-wrapper-scroll-y my-custom-scrollbar tab-pane fade">
+                  <div id="Char" class="table-wrapper-scroll-y my-custom-scrollbar tab-pane fade">
                     
                        <div id="show"></div>                 
                   </div>
 
-                  <div id="menu4" class="table-wrapper-scroll-y my-custom-scrollbar tab-pane fade">
+                  <div id="Letter" class="table-wrapper-scroll-y my-custom-scrollbar tab-pane fade">
                    
                     <div id="words"></div>
                   </div>

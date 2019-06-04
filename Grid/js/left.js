@@ -14,6 +14,7 @@ function myFunction1() {
 //LEXIC-------------------------------------------------------------------------
   function compilar(){
     Limpiar();
+    //Sintatic();
     var texto = document.getElementById("cajon").value;
     texto = texto.replace(/\n/g," ");
     var arreglo = [];
@@ -115,20 +116,17 @@ total = letras + numeros+ especiales+ separadores +operadores;
                 +  "<td  style='padding-left:20%;'>" + json[i].symbol + "</td>"
                 +  "<td  style='padding-left:20%;'> " + json[i].description + "</td>"
                 +"</tr>"
-      }
-    
-      table += "</table></div></td></tr></tbody></table>"
-    
+      }  
+      table += "</table></div></td></tr></tbody></table>"   
       var tableDiv = document.getElementById("show");
-    
       tableDiv.innerHTML = table;
       
     }
 
 
-//Letter
+//Letter------------------------------------------------------------------------------------
 function showWords(){
-  
+ //RELLENAR TABLA CON ARRAY DE PALABRAS (jsonW) Y MOSTRAR EN [#SINTATIC( #words) ]
   var table = "<table class = 'table table-striped table-bordered'>"
         +   "<thead>"
         +     "<tr>"
@@ -158,9 +156,68 @@ function showWords(){
 
 
 
+//Sintatic-----------------------------------------------------------------------------------------------
 
+function Sintatic(){
+  var xy = false;
+  var arreglo=[];
+  var contador =[];
+  var compose=0;
+  var simple=0;
+  var texto = document.getElementById("cajon").value;
+  texto = texto.replace(/\n/g," ");
+  var cadena=[];
+  cadena=texto.split(" ");
+console.log("Su Texto es"+texto+" existen "+cadena.length+" Palabras");
+document.getElementById("parrafo2").value += "-----------------------PALABRAS--------------------------";
+//CONTADOR DE PALABRAS COMPUESTAS O SIMPLES
+for (let i = 0; i < cadena.length; i++) {
 
+  for (let n = 0; n < jsonW.length; n++) {
+   if (cadena[i]==jsonW[n].word ) {
+    if (jsonW[n].description=="simple") {
+      simple++;
+    } 
+    if (jsonW[n].description=="compose") {
+      compose++;
+}
 
+   }
+    
+  }
+ 
+  
+}//FIN FOR CONTADOR
+//ARREGLO DE PALABRAS + CONTADOR
+for (var i = 0;  i < cadena.length; i++ )
+    {
+       for (let n = 0; n < arreglo.length; n++) {
+                   if (arreglo[n]==cadena[i]) {  
+                      contador[n]++;
+                      xy = true;
+                   }
+        } 
+        if (xy == false) {
+            arreglo[i]= cadena[i];
+            contador[i]= 1 ;
+       }
+        xy= false;
+    }    
+
+//MOSTRAR PALABRAS Y CANTIDAD DE PALABRAS EN TEXTAREA
+    for(x in arreglo){
+    document.getElementById("parrafo2").value +="  \n  "+arreglo[x]+"  ["+ contador[x]+"]";
+  }
+//MOSTRAR RESULTADOS EN TEXTAREA 
+document.getElementById("parrafo2").value += "\n ----------------------RESULTADOS----------------------";
+var total = 0;
+total = compose+simple;
+console.log("Simples: "+simple+" Compose "+compose);
+document.getElementById("parrafo2").value += "\n Simples:["+simple+"]";
+document.getElementById("parrafo2").value += "\n Composes:["+compose+"]";
+document.getElementById("parrafo2").value += "\n TOTAL palabras del diccionario=["+total+"]";
+document.getElementById("parrafo2").value += "\n TOTAL palabras en general=["+cadena.length+"]";
+}
 
 
 
@@ -169,8 +226,8 @@ function showWords(){
    
 
 
-
+//LIMPIAR TEXTAREAS
      function Limpiar(){
         document.getElementById("parrafo").value = "";
-
+        document.getElementById("parrafo2").value = "";
      }
